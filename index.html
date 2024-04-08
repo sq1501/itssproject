@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Foster Community</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #339966;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav {
+            background-color: #4CAF50;
+            overflow: hidden;
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        section {
+            padding: 20px;
+            display: none; /* Hide all sections by default */
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #339966;
+            color: white;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .gallery img {
+            width: 300px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+
+        .cta-button {
+            display: block;
+            margin: 20px auto;
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 5px;
+            cursor: pointer; /* Add cursor pointer to indicate the button is clickable */
+        }
+
+        .home-image {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            display: block;
+            border-radius: 10px;
+        }
+
+        .about-image,
+        .donate-image {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            display: block;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Embark on a Heartwarming Journey of Compassion</h1>
+        <p>Where every click brings tails of hope and pawsitive transformations into your life.</p>
+    </header>
+
+    <nav>
+        <a onclick="showSection('home')">Home</a>
+        <a onclick="showSection('about')">About Us</a>
+        <a onclick="showSection('gallery')">Gallery</a>
+        <a onclick="showSection('donate')">Donate</a>
+    </nav>
+
+    <section id="home" style="display: block;"> <!-- Set display to block by default -->
+        <h2>Welcome to Our Animal Foster Community</h2>
+        <p>
+            Join us on a heartwarming journey of compassion dedicated to providing a safe and caring environment for animals in need. At our animal foster community, we believe in making a difference, one paw at a time.
+        </p>
+        <p>
+            Explore our website to witness heartwarming stories, pawsitive transformations, and discover how you can contribute to our cause. Whether it's adopting a furry friend, donating to support our efforts, or simply spreading awareness, every action counts in helping us provide a better life for animals.
+        </p>
+        <img class="home-image" src="https://www.fchsanimals.org/uploads/9/1/0/8/91088192/foster_orig.png" alt="Animal Foster Community">
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>
+            Our animal foster community is dedicated to providing a safe and caring environment for animals.
+            We believe in making a difference, one paw at a time. Through our tireless efforts and unwavering commitment,
+            we strive to rescue, rehabilitate, and rehome animals in need, ensuring they find loving families and forever homes.
+            With a team of passionate volunteers and supporters, we work tirelessly to improve the lives of our furry friends
+            and raise awareness about animal welfare issues in our community.
+        </p>
+        <h3>Adoption Process</h3>
+        <ol>
+            <li>Visit our shelter during adoption hours to meet our animals.</li>
+            <li>Fill out an adoption application form.</li>
+            <li>Meet with an adoption counselor to discuss your lifestyle and preferences.</li>
+            <li>Complete the adoption agreement and pay the adoption fee.</li>
+            <li>Take your new furry friend home and provide them with a loving environment.</li>
+        </ol>
+        <img class="about-image" src="https://www.laanimalservices.com/sites/default/files/styles/card_tablet_1664x1028/public/2023-11/Virtual%20Foster.jpeg.webp?itok=0TK3_yqI" alt="About Us Image">
+    </section>
+
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery">
+            <!-- Add your animal pictures here -->
+            <img src= "https://images.squarespace-cdn.com/content/v1/5e7d1a6f18b2b26e9726b89f/1586893523112-GU53W6ZLOBGDYUW3SOTT/BDRR+Logo+Wood+Panel-Dogs.jpg" alt="Adorable Animal 1">
+            
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT261WUaRETnASRvoa1gAWRkvkj4oqsaktBxA&usqp=CAU" alt="Adorable Animal 2">
+            <img src="https://indogswetrust.org/wp-content/uploads/IMG_7147.jpg" alt="Adorable Animal 3">
+            
+            <!-- Add more images as needed -->
+        </div>
+    </section>
+
+    <section id="donate">
+        <h2>Donate to Support Our Cause</h2>
+        <p>
+            Your contribution helps us provide a better life for animals. Every donation counts in sustaining our efforts
+            to care for and find homes for these adorable creatures.
+        </p>
+        <img class="donate-image" src="https://vspca.org/wp-content/uploads/2020/05/donate-button-600x300.png" alt="Donate Image">
+        <a class="cta-button" href="#donate" onclick="promptDonation()">Donate Now</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Animal Foster Community. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function promptDonation() {
+            var donationAmount = prompt("Enter the amount you would like to donate:");
+            if (donationAmount != null) {
+                alert("Thank you for your donation of $" + donationAmount + ". Your support is greatly appreciated!");
+            }
+        }
+
+        function showSection(sectionId) {
+            // Hide all sections
+            var sections = document.getElementsByTagName('section');
+            for (var i = 0; i < sections.length; i++) {
+                sections[i].style.display = 'none';
+            }
+            
+            // Show the selected section
+            document.getElementById(sectionId).style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
